@@ -1,0 +1,299 @@
+        <style type="text/css">
+            
+            #topbar {
+                width: 1050px;
+                height: 40px;
+                margin: 0 auto;
+            }
+            
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            #logo {
+                margin-top: 6px;
+                width: 100px;
+                float: left;
+                margin-right: 10px;
+            }
+            
+            .sectionbar {
+                float: left;
+                border-left: 1px #CCCCCC solid;
+                height: 100%;
+            }
+            
+            #signin-logo {
+                width: 28px;
+                margin-top: 10px;
+                margin-left: 10px;
+                float: left;
+            }
+            
+            #signintext {
+                font-weight: bold;
+                font-size: 90%;
+                position: relative;
+                top: 15px;
+                left: 8px;
+                margin-right: 70px;
+                font-family: Arial;
+                float: left;
+            }
+            
+            #closesignin {
+                margin-left: 70px;
+            }
+            
+            .type {
+                float: left;
+                margin-top: 15px;
+                margin-left: 10px;
+                font-family: Arial;
+                font-size: 90%;
+                font-weight: bold;
+            }
+            
+            .topbar-menu {
+                font-family: Arial;
+                font-size: 90%;
+                font-weight: bold;
+                padding: 13px 15px 0 15px;
+                height: 27px;
+            }
+            
+            #more-arrow {
+                width: 18px;
+                margin-left: 25px;
+            }
+            
+            #searchbox {
+                background-color: #E4E4E4;
+                border: none;
+                font-weight: bold;
+                font-size: 14px;
+                padding: 5px;
+                margin-top: 8px;
+                margin-left: 8px;
+                float: left;
+            }
+            
+            #seatch-logo {
+                height: 27px;
+                margin-top: 8px;
+                
+            }
+            
+            .clear {
+                clear:both;
+            }
+            
+            .menu-bar-container {
+                background-color: #BB1919;
+                width: 100%;
+                height: 70px;
+            }
+            
+            #menu-bar {
+                width: 1050px;
+                margin: auto;
+            
+            }
+            
+            h1 {
+                margin: 0;
+                color: white;
+                font-size: 40px;
+                font-weight: normal;
+                font-family: Arial;
+                margin-top: 10px;
+                padding-top: 10px;
+                padding-bottom: 6px;
+            }
+            
+            #menubar-2-container {
+                background-color: #A91717;
+                width:100%
+            }
+            
+            #menubar2 {
+                width: 1065px;
+                margin: 0 auto;
+                height: 38px;
+            }
+            
+            #menubar2 a {
+                color: white;
+                text-decoration: none;
+                border-right: 1px solid #BB4545;
+                font-size: 14px;
+                font-family: Arial;
+                position: relative;
+                top: 10px;
+                padding: 0 10px;
+            }
+            
+            .no-boader {
+                border:none !important;
+            }
+            
+            #arrow {
+                height: 12px;
+                position: relative;
+                top: 10px;
+            }
+            
+            #page-container {
+                width: 1050px;
+                margin: 0 auto;
+            }
+            
+            h2 {
+                font-weight: normal;
+                font-family: Arial;
+                font-size: 20px;
+                margin-top: 50px;
+                border-bottom: 2px solid #a91717;
+                width:105px;
+            }
+            
+            h3 a {
+                color: black;
+                font-size: 30px;
+                text-decoration: none;
+                font-weight: normal;
+                font-family: Arial;
+            }
+            
+            h3 a:hover {
+                color: #1167a8;
+            }
+            
+            #article {
+                color: #5a5a5a;
+                width: 220px;
+                font-family: Arial;
+                float: left;
+            }
+            
+            .clock {
+                height: 18px;
+                margin-top: 0;
+                position:relative;
+                top: 3px;
+            }
+            
+            #article p2 {
+                font-size: 13px;
+            }
+            
+            #toplink {
+                text-decoration: none;
+                color: #a91717;
+                border-left: 1px solid #CCCCCC;
+                padding-left: 10px;   
+            }
+            
+            #article a:hover {
+                color: #1167a8;
+            }
+            
+            .aaa {
+                text-decoration: none;
+                color: #A91717;
+                font-family: Arial;
+            }
+            
+            .date {
+                padding-right: 10px;
+                font-family: Arial;
+            }
+            
+            #article-container {
+                float: left;
+                width: 700px;
+                border-right: 1px solid #CCCCCC;
+            }
+            
+            #article-image {
+                width: 400px;
+                margin-left: 50px;
+            }
+            
+            #article-hr {
+                border-top: 1px solid #a91717;
+                width: 50px;
+            }
+            
+            .alink {
+                color: black;
+                text-decoration: none;
+                margin-top: 100px;
+                font-family: Arial;
+                color: #5a5a5a;
+                font-size: 90%;
+            }
+            
+            .alink:hover {
+                color: #1167a8;
+            }
+            
+            
+
+            
+            
+            #watchlist {
+                width:330px;
+                float: right;
+            }
+            
+            h4 {
+                font-weight: normal;
+                font-size: 20px;
+                font-family: Arial;
+            }
+            
+            .watch-image {
+                width: 110px;
+                float: left;
+                margin-right: 10px;
+            }
+            
+            .watch-link {
+                text-decoration: none;
+                color: black;
+                font-weight: bold;
+                font-size: 17px;
+                font-family: Arial;
+                font-size: 100%;
+            }
+            
+            .watch-link:hover {
+                color: #1167a8;
+            }
+            
+            .cclock {
+                height: 18px;
+                margin-top: 0;
+                position:relative;
+                top: 1px;
+            }
+            .ddate {
+                padding-right: 10px;
+                font-family: Arial;
+                color: #5a5a5a;
+                font-size: 90%;
+                border-right: 1px solid #CCCCCC;
+                position: relative;
+            }
+            
+            .aaaa {
+                padding-left: 10px;
+                text-decoration: none;
+                font-family: Arial;
+                color: #a91717;
+                font-size: 90%;   
+            }
+
+        </style>
