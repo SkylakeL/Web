@@ -3,62 +3,97 @@
 
     <head>
         
-        <title>jQuery</title>
+        <title>Code Player</title>
     
-        <script type="text/javascript" src="jQuery/jquery.min.js"></script>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+        
+        <script src="jquery-ui/jquery-ui.js"></script>
+        
+        
+        
+        
         
         <style type="text/css">
             
-            body {
+            body{
                 font-family: Arial;
-                font-size: 150%;
+                margin: 0;
+                padding: 0;
             }
             
-            input{
-                height: 40px;
-                padding: 6px 5px 12px 5px;
-                font-size: 25px;
-                border-radius: 5px;
-                border:1px solid grey;
-                width: 320px;
+            #top-bar{
+                width: 100%;
+                background-color: #EEEEEE;
+                padding: 5px;
+                height: 30px;
             }
             
-            label {
-                position: relative;
-                top: 4px;
+            #logo{
                 float: left;
-                width: 200px;
-            }
-            
-            #wrapper {
-                width: 550px;
-                margin: 0 autos;
-            }
-            
-            .form-ele {
-                margin: 10px;
-            }
-            
-            #signup {
-                width: 130px;
-                margin-left: 200px;
-            }
-            
-            #error {
-                color: red;
                 font-family: Arial;
-                font-size: 80% !important;
+                font-size: 120%;
+                font-weight: bold;
+                padding: 3px 5px;
             }
             
-            #okay {
-                color: green;
-                font-family: Arial;
-                font-size: 80% !important;
+            #button-container{
+                width: 233px;
+                margin: 0 auto;
+            }
+            
+            .button{
+                float: left;
+                border: 1px solid grey;
+                padding: 6px;
+                border-right: none;
+                font-size: 90%;
+            }
+            
+            #html{
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            
+            #output{
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-right: 1px solid grey;
+            }
+            
+            .active{
+                background-color: #E8F2FF;
+            }
+            
+            .highlighted-button{
+                background-color: grey;   
+            }
+            
+            textarea{
+                resize: none;
+                border-top: none;
+                border-color: grey;
+            }
+            
+            .panel{
+                float: left;
+                width: 50%;
+                border-left: none;
+            }
+            
+            iframe{
+                border: none;
+                
+            }
+            
+            .hidden{
                 display: none;
             }
-        
+            
+            
+            
         </style>
-        
         
         
         
@@ -66,139 +101,107 @@
     
     <body>
         
-        <div id="wrapper">
-            
-            <div class="form-ele">
+        <div id="top-bar">
         
-                <label for="email">Email</label>
-
-                <input type="text" name="email" id="email" placeholder="eg.yourname@gmail.com">
+            <div id="logo">CodeHero</div>
+            
+            <div id="button-container">
+            
+                <div id="html" class="button active">HTML</div>
                 
+                <div id="css" class="button">CSS</div>
+                
+                <div id="js" class="button">JavaScript</div>
+                
+                <div id="output" class="button active">Output</div>
+            
             </div>
             
-            <div class="form-ele">
-            
-                <label for="Telephone">Telephone</label>
-
-                <input type="text" name="phone" id="phone" placeholder="eg.1234567">
-                
-            </div>
-            
-            <div class="form-ele">
-            
-                <label for="password">Password</label>
-
-                <input type="text" name="password" id="password">
-                
-            </div>
-            
-            <div class="form-ele">
-            
-                <label for="c-password">Confirm Password</label>
-
-                <input type="text" name="Confirm Password" id="Confirm-Password">
-                
-            </div>
-            
-            <div class="form-ele">
-
-                <input type="submit" name="submit" id="signup" value="Sign up">
-                
-            </div>
-            
-            <div id="error"></div>
-            
-            <div id="okay">Sign up successfully</div>
-            
-            
-        </div> 
+        </div>
         
         
         
         
+        
+        <div id="body-container">
+            
+            <textarea id="html-area" class="panel"><p id="paragraph">Hello World</p></textarea>
+            
+            <textarea id="css-area" class="panel hidden">p { color: green; }</textarea>
+            
+            <textarea id="js-area" class="panel hidden">document.getElementById("paragraph").innerHTML = "Hello Line - Changed by JS";</textarea>
+            
+            <iframe id="output-area" class="panel"></iframe>
+            
+        </div>
+        
+ 
+            
+
+        
+        
+        
+        
+ 
         <script type="text/javascript">
             
-            function isEmail(email) {
+            function update() {
                 
-                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            
-                return regex.test(email);
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-area").val() + "</style></head><body>" + $("#html-area").val() + "</body></html>");
+                
+                document.getElementById("output-area").contentWindow.eval($("#js-area").val());
                 
             }
             
-            $("#signup").click(function() {
+            $(".button").hover(function() {
                 
-                var error = "";
+                $(this).addClass("highlighted-button");
                 
-                var fieldMissing = "";
+            }, function() {
                 
-                if($("#email").val() == "") {
-                    
-                    fieldMissing += "<br>Email";
-                    
-                }
-                
-                if($("#phone").val() == "") {
-                    
-                    fieldMissing += "<br>Phone";
-                    
-                }
-                
-                
-                if($("#password").val() == "") {
-                    
-                    fieldMissing += "<br>Password";
-                    
-                }
-                
-                
-                if($("#Confirm Password").val() == "") {
-                    
-                    fieldMissing += "<br>Conform Password";
-                    
-                }
-                
-                if(fieldMissing != "") {
-                    
-                    error += "The following field(s) are missing:" + fieldMissing;
-                    
-                }
-                
-                
-
-                
-                
-                
-                
-                if($.isNumeric($("#phone").val()) == false) {
-                    
-                    error += "<p>please enter number</p>";
-                    
-                }
-                
-                if($("#password").val() != $("#Confirm-Password").val()) {
-                    
-                    error += "<p>password don't match</p>";
-                    
-                }
-                
-                if(error != "") {
-                    
-                    $("#error").html(error);
-                    
-                }
-                
-                else {
-                    
-                    $("#okay").show();
-                    $("#error").hide();
-                    
-                }
+                $(this).removeClass("highlighted-button");
                 
             });
+            
+            $(".button").click(function() {
+                
+                $(this).toggleClass("active");
+                
+                $(this).removeClass("highlighted-button");
+                
+                var id = $(this).attr("id") + "-area"
+                
+                $("#" + id).toggleClass("hidden");
+                
+                var numAcP = 4 - $('.hidden').length;
+                
+                $(".panel").width(($(window).width() / numAcP) - 10);
+                
+            });
+            
+            $("textarea").height($(window).height() - $("#top-bar").height() - 15);
+            
+            $(".panel").width($(window).width() / 2 - 10);
+            
+            update();
+            
+            $("textarea").on('change keyup paste', function() {
 
+                update();
+                
+            });
+     
+            
+      
+            
+            
             
         </script>
+        
+        
+        
+        
+        
     
     </body>
     
