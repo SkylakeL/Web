@@ -1,0 +1,14 @@
+.chat-popup {
+  width: 300px;
+  position: fixed;;
+  bottom: 0px;
+  right: 20px;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.fb-search {
+  width: 395px !important;
+}
